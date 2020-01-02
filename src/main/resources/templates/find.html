@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td>编号</td>
+		<td>姓名</td>
+		<td>年龄</td>
+		<td>操作</td>
+	</tr>
+	<tr th:each="item : ${stus.list}">
+		<td><span th:text="${item.id}"></span></td>
+		<td><span th:text="${item.name}"></span></td>
+		<td><span th:text="${item.age}"></span></td>
+		<td><a th:href="@{/stu/delete(id=${item.id})}">删除</a><a th:href="@{/stu/update(id=${item.id})}">修改</a></td>
+	</tr>
+</table>
+<p><span><a th:href="@{/stu/query(pageNum=${stus.prePage})}">上一页</a></span><span><a th:href="@{/stu/query(pageNum=${stus.nextPage})}">下一页</a></span></p>
+</body>
+</html>

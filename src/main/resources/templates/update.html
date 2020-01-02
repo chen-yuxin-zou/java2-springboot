@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{udpates}" method="post">
+        <input th:value="${stu.id}" name="id" type="hidden"/>
+        <input th:value="${stu.name}" name="name" type="text" />
+        <input th:value="${stu.age}" name="age" type="text" />
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
